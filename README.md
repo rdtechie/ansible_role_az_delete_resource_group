@@ -1,6 +1,6 @@
 # Ansible Role: az_delete_resource_group
 
-Creates an Azure Resource Group. This role has been made specifically to be used in CI/CD pipelines, hence the usage of a vault file.
+Deletes an Azure Resource Group. This role has been made specifically to be used in CI/CD pipelines, hence the usage of a vault file.
 
 ## Requirements
 
