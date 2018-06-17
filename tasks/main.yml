@@ -1,3 +1,4 @@
+---
 - name: Delete Azure Resource Group
   azure_rm_resourcegroup:
     name: "{{ az_resource_group_name }}"
@@ -7,4 +8,10 @@
     tenant: "{{ azure_tenant_id }}"
     subscription_id: "{{ azure_subscription_id }}"
     client_id: "{{ azure_client_id }}"
-    secret: "{{ azure_client_secret }}"  
+    secret: "{{ azure_client_secret }}"
+  register: DeletedResourceGroup
+
+- name: Displaying Results when the state has been changed
+  debug:
+    msg: "Deleted Resource Group {{ CreatedResourceGroup.results[0].state.name }}"
+  when: DeletedResourceGroup.changed
