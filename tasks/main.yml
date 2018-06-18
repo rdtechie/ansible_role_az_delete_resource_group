@@ -13,5 +13,5 @@
 
 - name: Displaying Results when the state has been changed
   debug:
-    msg: "Deleted Resource Group {{ CreatedResourceGroup.results[0].state.name }}"
+    msg: "Deleted Resource Group {{ DeletedResourceGroup.results[0].state.name }}"
   when: DeletedResourceGroup.changed
