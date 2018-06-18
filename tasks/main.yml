@@ -10,8 +10,3 @@
     client_id: "{{ azure_client_id }}"
     secret: "{{ azure_client_secret }}"
   register: DeletedResourceGroup
-
-- name: Displaying Results when the state has been changed
-  debug:
-    msg: "Deleted Resource Group {{ DeletedResourceGroup.results[0].state.name }}"
-  when: DeletedResourceGroup.changed
